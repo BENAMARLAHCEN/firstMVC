@@ -13,11 +13,9 @@ if (!isset($_SESSION['id'])) {
     if (isset($_POST['submit']) && $_POST['submit'] == 'signup') {
         UsersControler::signup();
     }
-
 } else 
     if ($_SESSION['role'] == 'client') {
     UsersControler::logout();
-
 } else {
 
     if (isset($_GET["action"])) {
@@ -26,9 +24,7 @@ if (!isset($_SESSION['id'])) {
             case "home":
                 UsersControler::listUser();
                 break;
-                // case "login": userController::login(); break;
-                // case "logout": userController::logout();  break;
-                // --------------------
+
             case "addUser":
                 UsersControler::insert();
                 break;

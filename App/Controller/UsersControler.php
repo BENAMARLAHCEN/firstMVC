@@ -2,10 +2,12 @@
 
 class UsersControler
 {
-    public static function loginform(){
-        include_once "App/View/login.php";
+    public static function loginform()
+    {
+        include_once "../App/View/login.php";
     }
-    public static function logout(){
+    public static function logout()
+    {
         session_destroy();
         header('location:index.php');
     }
@@ -29,10 +31,12 @@ class UsersControler
         }
     }
 
-    public static function signupForm(){
-        include_once "App/View/signup.php";
+    public static function signupForm()
+    {
+        include_once "../App/View/signup.php";
     }
-    public static function signup(){
+    public static function signup()
+    {
         unset($_POST['submit']);
         if (Users::addUsers($_POST) === false) {
         } else {
@@ -44,11 +48,11 @@ class UsersControler
     public static function listUser()
     {
         $listUsers = Users::getUsers();
-        include_once "App/View/index.php";
+        include_once "../App/View/index.php";
     }
     public static function insert()
     {
-        include_once "App/View/insert.php";
+        include_once "../App/View/insert.php";
     }
     public static function addUser()
     {
@@ -62,14 +66,14 @@ class UsersControler
     {
         $where = "id = $_GET[id]";
         $user = Users::getUserData($where);
-        include_once "App/View/edit.php";
+        include_once "../App/View/edit.php";
     }
     public static function readUser()
     {
         $where = "id = $_GET[id]";
         $user = Users::getUserData($where);
         $user = $user[0];
-        include_once "App/View/read.php";
+        include_once "../App/View/read.php";
     }
     public static function UpdateUser()
     {

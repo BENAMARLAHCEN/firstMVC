@@ -2,7 +2,8 @@
 
 class CrudDynamique
 {
-    public static function selectRecords($pdo, string $table, string $columns = "*", string $where = null)
+
+    public static function selectRecords($pdo , string $table, string $columns = "*", string $where = null)
     {
         // Use prepared statements to prevent SQL injection
         $sql = "SELECT $columns FROM $table";
